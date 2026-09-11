@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>哈气小猫·木偶桑多涅 — 桌面宠物下载</title>
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap">
+<style>
+:root{
+  --bg:#fff7fa; --card:#ffffff; --title-a:#ffe0ed; --title-b:#ffc0d8; --gold:#d29e1c; --gold-soft:#eec974;
+  --pink:#ff8fb8; --pink-deep:#ff5f9e; --text:#4a283a; --text-soft:#8a6a7a; --line:#f3d9e4;
+  --shadow:0 10px 30px rgba(210,120,160,.14);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"Noto Sans SC","Microsoft YaHei",system-ui,sans-serif;color:var(--text);background:
+  radial-gradient(1200px 500px at 15% -5%,#ffe4ef 0%,transparent 55%),
+  radial-gradient(1000px 460px at 95% 8%,#fff0d8 0%,transparent 50%),
+  var(--bg);line-height:1.7;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+a{color:var(--pink-deep);text-decoration:none}
+
+/* ===== Hero ===== */
+.hero{padding:74px 0 40px;text-align:center;position:relative}
+.hero .pet{width:190px;height:196px;object-fit:cover;border-radius:26px;box-shadow:var(--shadow);
+  border:3px solid #fff;background:#fff;margin:0 auto 22px;display:block}
+.badge{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--title-a),var(--title-b));
+  color:var(--text);font-size:13px;font-weight:600;padding:6px 16px;border-radius:999px;box-shadow:0 4px 14px rgba(255,120,170,.25)}
+.badge svg{width:14px;height:14px}
+h1{font-size:46px;font-weight:900;letter-spacing:2px;margin:18px 0 6px;
+  background:linear-gradient(120deg,#8a2f55,#e0528f 45%,var(--gold) 90%);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.sub{font-size:17px;color:var(--text-soft);font-weight:400}
+.hero-meta{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:22px 0 6px}
+.chip{font-size:12.5px;color:var(--text-soft);background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 14px}
+.btn-download{display:inline-flex;align-items:center;gap:10px;margin-top:26px;padding:16px 46px;border-radius:999px;
+  background:linear-gradient(135deg,#ff7fb2,#ff5f9e);color:#fff;font-size:19px;font-weight:700;letter-spacing:2px;
+  box-shadow:0 12px 30px rgba(255,95,158,.4);transition:transform .18s,box-shadow .18s;border:none;cursor:pointer}
+.btn-download:hover{transform:translateY(-3px);box-shadow:0 16px 38px rgba(255,95,158,.5)}
+.btn-download svg{width:22px;height:22px}
+.btn-download .v{font-size:12px;font-weight:500;opacity:.9;letter-spacing:0}
+.scroll-hint{margin-top:34px;color:var(--text-soft);font-size:13px;opacity:.75}
+
+/* ===== Section ===== */
+section{padding:56px 0 8px}
+.sec-head{text-align:center;margin-bottom:38px}
+.sec-head h2{font-size:30px;font-weight:900;letter-spacing:1px}
+.sec-head p{color:var(--text-soft);margin-top:6px;font-size:15px}
+.kicker{display:inline-block;font-size:12px;font-weight:700;color:var(--gold);letter-spacing:3px;
+  background:linear-gradient(135deg,#fff6e2,#ffe9b8);padding:4px 14px;border-radius:999px;margin-bottom:12px}
+
+/* ===== 特性卡片 ===== */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--card);border-radius:20px;padding:26px 22px;box-shadow:var(--shadow);
+  border:1px solid #fff;position:relative;overflow:hidden;transition:transform .18s}
+.card:hover{transform:translateY(-4px)}
+.card .ico{width:46px;height:46px;border-radius:14px;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,var(--title-a),var(--title-b));margin-bottom:14px}
+.card .ico svg{width:24px;height:24px;stroke:var(--pink-deep)}
+.card h3{font-size:17px;font-weight:700;margin-bottom:8px}
+.card p{font-size:13.5px;color:var(--text-soft)}
+.tag-new{position:absolute;top:14px;right:14px;font-size:11px;font-weight:700;color:#fff;
+  background:linear-gradient(135deg,#ff9d3f,#ff6b35);border-radius:999px;padding:3px 10px}
+
+/* ===== 散步模式 ===== */
+.modes{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.mode{background:var(--card);border-radius:18px;padding:18px 14px;text-align:center;box-shadow:var(--shadow);border:1px solid #fff}
+.mode b{display:block;font-size:14.5px;margin-bottom:6px}
+.mode span{font-size:12px;color:var(--text-soft);display:block;line-height:1.55}
+.mode.hot{border:2px solid var(--gold-soft);background:linear-gradient(180deg,#fffdf6,var(--card))}
+.mode.hot b{color:var(--gold)}
+.note{background:linear-gradient(135deg,#fff3e8,#ffeef6);border:1px solid var(--line);border-radius:16px;
+  padding:16px 20px;font-size:13.5px;color:var(--text);margin-top:16px}
+
+/* ===== 表格 ===== */
+.tbl{width:100%;border-collapse:collapse;background:#fff;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);font-size:14px}
+.tbl th{background:linear-gradient(135deg,var(--title-a),var(--title-b));padding:13px 16px;text-align:left;font-weight:700}
+.tbl td{padding:12px 16px;border-top:1px solid var(--line);color:var(--text-soft);vertical-align:top}
+.tbl td:first-child{color:var(--text);font-weight:600;white-space:nowrap}
+.tbl tr:hover td{background:#fffafc}
+
+/* ===== 时间轴 ===== */
+.timeline{display:grid;grid-template-columns:96px 1fr;gap:0;position:relative}
+.tl-node{display:grid;grid-template-columns:96px 1fr;grid-column:1/3;position:relative}
+.tl-time{grid-column:1;text-align:right;padding:14px 18px 14px 0;font-weight:700;color:var(--gold);font-size:14px;position:relative}
+.tl-dot{grid-column:1;justify-self:center;align-self:start;width:14px;height:14px;border-radius:50%;
+  background:linear-gradient(135deg,var(--pink),var(--pink-deep));margin-top:20px;box-shadow:0 0 0 4px #ffe9f2;z-index:1}
+.tl-body{grid-column:2;padding:10px 0 22px 22px;border-left:2px solid var(--title-b)}
+.tl-body h4{font-size:15.5px;font-weight:700;margin-bottom:6px}
+.tl-body ul{list-style:none}
+.tl-body li{font-size:13px;color:var(--text-soft);padding-left:16px;position:relative;margin-bottom:4px}
+.tl-body li:before{content:"";position:absolute;left:2px;top:9px;width:6px;height:6px;border-radius:50%;background:var(--gold-soft)}
+
+/* ===== 步骤 ===== */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.step{background:var(--card);border-radius:20px;padding:26px 22px;box-shadow:var(--shadow);border:1px solid #fff;position:relative}
+.step .no{width:38px;height:38px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#ff9d3f,#ff6b35);color:#fff;font-weight:900;font-size:17px;margin-bottom:14px}
+.step h3{font-size:15.5px;margin-bottom:8px}
+.step p{font-size:13px;color:var(--text-soft)}
+
+/* ===== 下载区 ===== */
+.dl{padding:64px 0 70px}
+.dl-box{background:linear-gradient(150deg,#fff0f6,#fffaf0);border:1px solid var(--line);border-radius:26px;
+  padding:46px 40px;text-align:center;box-shadow:var(--shadow)}
+.dl-box h2{font-size:30px;font-weight:900;margin-bottom:8px}
+.dl-box>p{color:var(--text-soft);font-size:15px;margin-bottom:26px}
+.dl-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;text-align:left;max-width:760px;margin:0 auto 26px}
+.dl-item{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 18px;font-size:13px}
+.dl-item b{display:block;font-size:13.5px;margin-bottom:4px}
+.dl-item span{color:var(--text-soft);font-size:12.5px}
+
+footer{padding:34px 0 50px;text-align:center;color:var(--text-soft);font-size:12.5px;border-top:1px solid var(--line)}
+footer b{color:var(--text)}
+
+/* ===== 响应式 ===== */
+@media(max-width:900px){
+  .cards,.steps{grid-template-columns:1fr 1fr}
+  .modes{grid-template-columns:repeat(3,1fr)}
+  h1{font-size:34px}
+}
+@media(max-width:600px){
+  .cards,.steps,.dl-grid{grid-template-columns:1fr}
+  .modes{grid-template-columns:repeat(2,1fr)}
+  .timeline{grid-template-columns:76px 1fr}
+  .tl-node{grid-template-columns:76px 1fr}
+  h1{font-size:28px}
+  .dl-box{padding:34px 20px}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== Hero ===== -->
+<header class="hero wrap">
+  <img class="pet" src="assets/expr-default.png" alt="哈气小猫·木偶桑多涅">
+  <div class="badge">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-6"/><path d="M12 2v14"/><path d="M7 8l5-5 5 5"/></svg>
+    版本 V2.6 · 已全面回归验证
+  </div>
+  <h1>哈气小猫·木偶桑多涅</h1>
+  <p class="sub">基于《原神》愚人众执行官「木偶」桑多涅 Q 版表情包的 Windows 桌面宠物</p>
+  <div class="hero-meta">
+    <span class="chip">Windows 免安装</span>
+    <span class="chip">单文件 EXE</span>
+    <span class="chip">单进程多分身</span>
+    <span class="chip">13 种表情互斥</span>
+    <span class="chip">快捷方式收纳箱</span>
+  </div>
+  <button class="btn-download" onclick="location.href='哈气小猫·木偶桑多涅.zip'">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-6"/><path d="M12 2v14"/><path d="M7 8l5-5 5 5"/></svg>
+    下载桌宠 <span class="v">V2.6 · 455KB</span>
+  </button>
+  <div class="scroll-hint">滚动查看详细介绍</div>
+</header>
+
+<!-- ===== 简介 ===== -->
+<section class="wrap">
+  <div class="sec-head">
+    <span class="kicker">ABOUT</span>
+    <h2>一只会陪你干活、会整活、会聊天的桌宠</h2>
+    <p>单进程多实例架构 · 全部分身共享一套资源 · 表情全局互斥不撞脸</p>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 9h6M9 13h6M9 17h3"/></svg></div>
+      <h3>单进程多分身</h3>
+      <p>分出 3 个、13 个分身都只在同一个主进程内，任务管理器永远只有一条程序，Alt+Tab 不被刷屏。</p>
+    </div>
+    <div class="card">
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/><path d="M14 20l4-4 4 4M18 16v6"/></svg></div>
+      <h3>快捷方式收纳箱</h3>
+      <p>把快捷方式拖到桌宠身上就吃掉收纳，隐藏启动器随时启动，单击启动、右键吐出到桌面。</p>
+    </div>
+    <div class="card">
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5-4.9-2.6-4.9 2.6.9-5.5-4-3.9L9.5 8z"/></svg></div>
+      <h3>13 表情互斥</h3>
+      <p>同一时刻所有分身表情互不重复；自动轮换与手动点击切换都执行全局排重，13 只 13 种表情。</p>
+    </div>
+    <div class="card">
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+      <h3>待机自动换表情</h3>
+      <p>静置时按设定间隔自动随机换表情/动作，间隔可自定义；手动点击切换照常保留，两套逻辑不冲突。</p>
+    </div>
+    <div class="card">
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg></div>
+      <h3>一对一私聊</h3>
+      <p>独立气泡聊天窗，像微信/QQ 一样收发；桑多涅傲娇人设全程在线，不弹出豆包主窗口。</p>
+    </div>
+    <div class="card">
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M3 5l3 14 6-6 6 6 3-14z"/></svg></div>
+      <h3>一键换鼠标指针</h3>
+      <p>动态 / 静态两套 Q 版木偶指针一键切换，指针大小 1-15 档实时放大，重启后保持。</p>
+    </div>
+    <div class="card">
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M12 2a7 7 0 0 1 7 7c0 3-1.5 5-4 6.5V18a3 3 0 0 1-3 3h0a3 3 0 0 1-3-3v-2.5C6.5 14 5 12 5 9a7 7 0 0 1 7-7z"/></svg></div>
+      <h3>智能互动全家桶</h3>
+      <p>指哪打哪、拉回窗口、单击触发双击、呼叫豆包、淘气三档、巡逻间距——全都可开关可调速。</p>
+    </div>
+  </div>
+</section>
+<!-- ===== 散步模式 ===== -->
+<section class="wrap">
+  <div class="sec-head">
+    <span class="kicker">WANDER</span>
+    <h2>10 种散步模式，安静到闹腾随你挑</h2>
+    <p>在「设置 → 散步模式」一键切换 · 多人分身边距自动保持不扎堆</p>
+  </div>
+  <div class="modes">
+    <div class="mode"><b>自由散步</b><span>随意走动，随机换方向</span></div>
+    <div class="mode"><b>懒散</b><span>慢悠悠，一个地方待很久</span></div>
+    <div class="mode"><b>多动症</b><span>到处乱跑，1.5 倍速无规律</span></div>
+    <div class="mode"><b>巡逻</b><span>沿屏幕四边巡走，多人间距均匀</span></div>
+    <div class="mode"><b>原地发呆</b><span>停在原地，只换表情</span></div>
+    <div class="mode"><b>大淘气</b><span>高频骚扰：抢指针、拖窗口、开应用</span></div>
+    <div class="mode"><b>淘气</b><span>约 15-20 秒骚扰一次</span></div>
+    <div class="mode"><b>小淘气</b><span>约 3-5 分钟轻互动，安静挂机</span></div>
+    <div class="mode hot"><b>编队跟随</b><span>主宠领队，其余排竖队像小火车，队形自适应屏幕</span></div>
+    <div class="mode hot"><b>绕圈巡游</b><span>全分身均匀分布大圆周，绕屏中心缓缓旋转</span></div>
+  </div>
+  <div class="note">
+    <b>多人规则：</b>淘气事件触发时随机只挑 1 个分身执行，其余继续散步/待机，不会全体一起闹；
+    巡逻与编队/绕圈内置间距算法，分身越多自动把距离拉开，实测 13 分身扎堆对数从 66/78 降到 1/78。
+    <b>入口：</b>散步模式在右键菜单（窗口置顶/拉回窗口旁）与「设置 → 散步模式」两处均可切换，打开子菜单自动刷新勾选。
+  </div>
+</section>
+
+<!-- ===== 收纳箱 ===== -->
+<section class="wrap">
+  <div class="sec-head">
+    <span class="kicker">STORE</span>
+    <h2>收纳箱 · 快捷方式吞吐系统</h2>
+    <p>桌面游戏玩法：让它吞哪一个就吞进去，按一下就吐出来</p>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      <h3>拖进去吃掉</h3>
+      <p>把桌面或文件夹里的快捷方式（.lnk/.url/.exe/.bat/.cmd）直接拖到桌宠身上，它就会吃掉并收纳起来，桌面瞬间清爽。</p>
+    </div>
+    <div class="card">
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M9 12h6M12 9v6"/></svg></div>
+      <h3>隐藏启动器</h3>
+      <p>右键菜单 → 收纳箱 打开启动器列表：带图标与路径，单击直接启动程序，一个窗口管理所有收纳项。</p>
+    </div>
+    <div class="card">
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M6 13l6-6 6 6"/></svg></div>
+      <h3>按一下吐出</h3>
+      <p>右键列表项即可吐出到桌面（快捷方式自动重建），也可一键全部吐出；收纳列表永久保存，重启不丢。</p>
+    </div>
+  </div>
+  <div class="note">
+    <b>安全与兼容：</b>桌面原件吞入时移入回收站（可随时手动恢复），吐出时自动重建快捷方式到桌面；
+    与 DeskBox 等桌面美化工具完全兼容——收纳箱接收标准文件拖拽，和桌面收纳盒互不干扰，可以同时使用。
+  </div>
+</section>
+
+<!-- ===== 分身系统 ===== -->
+<section class="wrap">
+  <div class="sec-head">
+    <span class="kicker">CLONE</span>
+    <h2>分身系统</h2>
+    <p>最多 13 只，数量上限 = 表情素材数</p>
+  </div>
+  <div class="tbl-wrap">
+    <table class="tbl">
+      <tr><th style="width:180px">功能</th><th>说明</th></tr>
+      <tr><td>快速分身</td><td>右键菜单「快速分身」1/2/3 一键分，或到上限后随机补满</td></tr>
+      <tr><td>收回分身</td><td>「收回这个」只收回当前这只；「收回其他」保留当前、收回全部其余；最后一个分身永远收不回去</td></tr>
+      <tr><td>表情互斥</td><td>同一瞬间所有分身的表情/待机动画互不重复；分身数超过 13 才允许重复并尽量错开</td></tr>
+      <tr><td>单进程架构</td><td>所有分身运行在同一主进程内，资源（贴图/动画/帧缓存）全局共享只加载一份</td></tr>
+      <tr><td>独立行为</td><td>每个分身独立移动、独立待机、独立随机动作，但共用同一套全局定时器（全进程仅 2 个）</td></tr>
+      <tr><td>巡逻间距</td><td>「设置 → 分身巡逻间距」可调 50-600px，多分身移动中自动变速拉开距离</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ===== 聊天 ===== -->
+<section class="wrap">
+  <div class="sec-head">
+    <span class="kicker">CHAT</span>
+    <h2>一对一私聊 · 桑多涅傲娇人设</h2>
+    <p>不弹出豆包主窗口，后台静默对话，前台只有宠物气泡窗</p>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M21 12a8 8 0 0 1-8 8H4l2-3a8 8 0 1 1 15-5z"/></svg></div>
+      <h3>微信式气泡窗</h3>
+      <p>独立窗口、气泡对话，固定大尺寸可拖拽缩放，收发一目了然；点击任意分身都可开聊。</p>
+    </div>
+    <div class="card">
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5-4.9-2.6-4.9 2.6.9-5.5-4-3.9L9.5 8z"/></svg></div>
+      <h3>傲娇人设绑定</h3>
+      <p>固定启用桑多涅专属提示词：嘴硬心软、机械演算、执行官礼仪，口头禅还原官方语音风格。</p>
+    </div>
+    <div class="card">
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 10h2M15 10h2M7 14h10"/></svg></div>
+      <h3>人设可开关</h3>
+      <p>「设置 → 角色人设」开关自由切换：桑多涅模式 / 普通对话模式。</p>
+    </div>
+  </div>
+  <div class="note">
+    <b>接入方式：</b>在「设置 → API Key」填入你的豆包（火山方舟）API Key 即可直连使用；
+    未填 Key 时聊天窗自动唤起本机豆包客户端转接对话。跨电脑使用时在设置里重填新电脑的 Key 即可。
+  </div>
+</section>
+
+<!-- ===== 快速上手 ===== -->
+<section class="wrap">
+  <div class="sec-head">
+    <span class="kicker">QUICK START</span>
+    <h2>三步上手</h2>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div class="no">1</div>
+      <h3>下载解压</h3>
+      <p>点击上方下载按钮，解压到任意文件夹（建议单独建一个文件夹）。</p>
+    </div>
+    <div class="step">
+      <div class="no">2</div>
+      <h3>运行 EXE</h3>
+      <p>双击「哈气小猫·木偶桑多涅.exe」，桌宠出现在屏幕上。可右键发送快捷方式到桌面。</p>
+    </div>
+    <div class="step">
+      <div class="no">3</div>
+      <h3>右键开玩</h3>
+      <p>右键桌宠打开菜单：呼叫豆包、分身、散步模式、设置、帮助都在这里。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 更新日志 ===== -->
+<section class="wrap">
+  <div class="sec-head">
+    <span class="kicker">CHANGELOG</span>
+    <h2>更新日志</h2>
+  </div>
+  <div class="timeline">
+    <div class="tl-node">
+      <div class="tl-dot"></div>
+      <div class="tl-body">
+        <h4>V2.6 — 收纳箱吞吐系统 / 散步模式回菜单 / 指针修复</h4>
+        <ul>
+          <li>【新功能】快捷方式收纳箱：拖到桌宠身上吞入收纳，右键菜单打开隐藏启动器，单击启动、右键吐出、一键全吐；桌面原件入回收站、吐出自动重建，与 DeskBox 兼容</li>
+          <li>【调整】散步模式回到右键菜单（10 种 + 关闭散步，子菜单自动刷新勾选），设置里同步保留</li>
+          <li>【修复】鼠标指针大小调节后动态变静态：改用系统原生指针缩放（Accessibility CursorSize + SPI_SETCURSORS），动态 .ani 保持动画、静态 .cur 保持静态，1-15 档实时生效</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tl-node">
+      <div class="tl-dot"></div>
+      <div class="tl-body">
+        <h4>V2.5 — 多人散步新特性 / 巡逻扎堆根治</h4>
+        <ul>
+          <li>新增「编队跟随」：主宠领队、其余排竖队像小火车，队形总长随队长位置动态适配屏幕高度，人多不挤屏</li>
+          <li>新增「绕圈巡游」：全分身均匀分布大圆周绕屏心旋转，半径随分身数自动加大，13 只也能展开</li>
+          <li>修复巡逻多人扎堆：沿边随机 + 起始边错开，13 分身扎堆对数 66/78 → 1/78</li>
+          <li>淘气多人独占、三档间隔回归验证通过</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tl-node">
+      <div class="tl-dot"></div>
+      <div class="tl-body">
+        <h4>V2.4 — 缩放渲染根治</h4>
+        <ul>
+          <li>帧缓存策略重写：正在使用的所有尺寸全部驻留，只释放无宠物使用的旧尺寸，消除花屏/乱码/每帧重建卡顿</li>
+          <li>13 分身实测缓存 13 组、位图零释放、内存约 163MB</li>
+          <li>聊天窗放大到 1000×1240，边缘 7px 拖拽缩放</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tl-node">
+      <div class="tl-dot"></div>
+      <div class="tl-body">
+        <h4>V2.3 — 全局定时器 / 指针大小根治</h4>
+        <ul>
+          <li>移动+动画+随机表情定时器合并为 2 个全局定时器，全部分身共用</li>
+          <li>鼠标大小改为 CopyImage+SetSystemCursor 方案，彻底修复调节无效</li>
+          <li>保存设置不再强制重置宠物大小</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tl-node">
+      <div class="tl-dot"></div>
+      <div class="tl-body">
+        <h4>V2.2 — 聊天改版 / 人设绑定</h4>
+        <ul>
+          <li>独立私聊窗口，不唤起豆包主界面；桑多涅傲娇人设提示词固定启用、可开关</li>
+          <li>聊天窗多档尺寸 → 固定大尺寸，去掉易出 bug 的档位切换</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tl-node">
+      <div class="tl-dot"></div>
+      <div class="tl-body">
+        <h4>V2.1 — 淘气三档 / 巡逻间距</h4>
+        <ul>
+          <li>淘气模式分为大淘气 / 淘气 / 小淘气三档，多人时每次随机单只执行</li>
+          <li>多人巡逻间距可调，移动中自动变速拉开距离</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tl-node">
+      <div class="tl-dot"></div>
+      <div class="tl-body">
+        <h4>V2.0 — 架构重构</h4>
+        <ul>
+          <li>解除与豆包主程序进程捆绑：关豆包窗口桌宠照常运行</li>
+          <li>单进程多实例：全部分身同一进程，任务管理器只一条</li>
+          <li>全局资源共享、闲置资源回收，内存显著下降</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 下载区 ===== -->
+<section class="wrap dl">
+  <div class="dl-box">
+    <h2>下载哈气小猫·木偶桑多涅</h2>
+    <p>当前版本 V2.6 · 单文件压缩包约 455KB · 解压即用</p>
+    <button class="btn-download" onclick="location.href='哈气小猫·木偶桑多涅.zip'">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-6"/><path d="M12 2v14"/><path d="M7 8l5-5 5 5"/></svg>
+      下载压缩包 <span class="v">ZIP</span>
+    </button>
+    <div class="dl-grid">
+      <div class="dl-item"><b>压缩包内容</b><span>主程序 EXE · 13 表情帧素材 · 动态+静态两套 Q 版指针 · 配置文件 · 使用说明 · 图标</span></div>
+      <div class="dl-item"><b>系统要求</b><span>Windows 7 及以上 · .NET Framework 4.0（系统自带）· 无需联网</span></div>
+      <div class="dl-item"><b>注意事项</b><span>解压后请保持 EXE 与 frames / cursors 文件夹同级；换电脑后重新设置 API Key 与豆包位置</span></div>
+      <div class="dl-item"><b>完整教程</b><span>压缩包内「使用说明.txt」包含全部功能、快捷键与常见问题；桌宠内「帮助」界面同步可查</span></div>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <b>哈气小猫·木偶桑多涅</b> — 个人桌面宠物项目 · 基于《原神》角色桑多涅（木偶）的非官方同人作品<br>
+  游戏素材版权归原厂商所有 · 本程序仅供学习与个人使用
+</footer>
+</body>
+</html>
